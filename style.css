@@ -1,0 +1,176 @@
+:root {
+    --primary: hsl(259, 100%, 65%);
+    --error: hsl(0, 100%, 67%);
+    --card-background: hsl(0, 0%, 100%);
+    --neutral-100: hsl(0, 0%, 94%);
+    --neutral-400: hsl(0, 1%, 44%);
+    --neutral-900: hsl(0, 0%, 8%);
+}
+
+html {
+    background-color: var(--neutral-100);
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+}
+
+/* overall card styling */
+.age-calc__wrapper {
+    max-width: 1000px;
+    width: 92.5vw;
+    background-color: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    border-radius: 2em 2em 15em 2em;
+    margin: 6rem auto 3rem;
+
+    --button-size: 6.5rem;
+    --padding-side: 5rem;
+    --padding-vert: 2rem;
+}
+
+/* inputs */
+.age-calc__inputs {
+    display: flex;
+    width: 75%;
+    max-width: 640px;
+    margin: var(--padding-vert) var(--padding-side);
+    justify-content: space-between;
+}
+
+.input__wrapper {
+    font-weight: 700;
+}
+
+.input__label {
+    letter-spacing: 0.25em;
+}
+
+.input__error {
+    opacity: 0;
+    font-weight: 400;
+}
+
+.input__wrapper > input {
+    width: 6ch;
+    font-size: 2.5rem;
+    border-radius: .25em;
+    padding: .25rem .5rem;
+}
+
+/* Hide arrows on input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input__wrapper > input:focus {
+    border: 1px solid var(--primary);
+}
+
+/* when an input is invalid */
+div.input__wrapper.invalid > input {
+    border: 1px solid var(--error)!important;
+}
+
+div.input__wrapper.invalid > .input__error {
+    display: block!important;
+    opacity: 1;
+}
+
+div.input__wrapper.invalid > p {
+    color: var(--error)!important;
+}
+
+/* divider */
+.age-calc__divider {
+    width: auto;
+    opacity: 15%;
+    height: 2px;
+    background-color: var(--neutral-900);
+    margin: 0 var(--padding-side) calc(var(--button-size) / -2);
+}
+
+/* submit button */
+.submit__button {
+    height: 6.5rem;
+    width: 6.5rem;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: var(--padding-side);
+    border: transparent;
+    background-color: var(--primary);
+    z-index: 2;
+    transition: all 100ms ease;
+}
+
+.submit__button:hover {
+    cursor: pointer;
+    background-color: var(--neutral-900);
+}
+
+.submit__button:active {
+    transform: scale(0.95);
+}
+
+.submit__button > img {
+    width: 60%;
+    margin: auto;
+}
+
+/* output text */
+.age-calc__output {
+    padding: var(--padding-vert) var(--padding-side);
+    margin-bottom: var(--padding-side);
+}
+
+.output {
+    font-size: 7.5rem;
+    font-weight: 800;
+    line-height: 7rem;
+}
+
+.output > i > span {
+    color: var(--primary);
+}
+
+@media (max-width: 769px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    .input__wrapper {
+        margin-bottom: var(--padding-vert);
+    }
+
+    .submit__button {
+        margin: auto;
+    }
+    
+    .output {
+        font-size: 6rem;
+    }
+    
+}
+
+@media (max-width: 481px) {
+
+    html {
+        font-size: 8px;
+    }
+
+    .age-calc__wrapper {
+        margin: 50% auto;
+    }
+
+    .input__wrapper > input {
+        font-size: 2rem;
+    }
+}

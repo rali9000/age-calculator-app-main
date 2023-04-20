@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="reset.css" media="screen">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="age-calc__wrapper">
+    <div class="age-calc__inputs">
+      <div class="input__wrapper" aria-label="birthday inputs">
+        <p class="input__label" aria-hidden="true">MONTH</p>
+        <input type="number" placeholder="MM" id="input_month" aria-label="month input">
+        <p class="input__error" id="error_message">
+          <i>Must be a valid month</i>
+        </p>
+      </div>
+      <div class="input__wrapper">
+        <p class="input__label" aria-hidden="true">DAY</p>
+        <input type="number" placeholder="DD" id="input_day" aria-label="day input">
+        <p class="input__error" id="error_message">
+          <i>Must be a valid day</i>
+        </p>
+      </div>
+      <div class="input__wrapper">
+        <p class="input__label" aria-hidden="true">YEAR</p>
+        <input type="number" placeholder="YYYY" id="input_year" aria-label="year input">
+        <p class="input__error" id="error_message">
+          <i>Must be in the past</i>
+        </p>
+      </div>
+    </div>
+    <div class="age-calc__divider"></div>
+    <button class="submit__button" id="submit_button" onclick="execute();" aria-label="submit">
+      <img src="./assets/images/icon-arrow.svg" alt="">
+    </button>
+    <div class="age-calc__output">
+      <p class="output">
+        <i><span id="output_year">--</span> years</i>
+      </p>
+      <p class="output">
+        <i><span id="output_month">--</span> months</i>
+      </p>
+      <p class="output">
+        <i><span id="output_day">--</span> days</i>
+      </p>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://rali.cc/contact">rali9000</a>.
+  </div>
+
+  <script src="main.js"></script> 
+</body>
+</html>
