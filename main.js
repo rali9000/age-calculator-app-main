@@ -21,9 +21,12 @@ function check_input(month_in, day_in, year_in) {
 
     let day = day_in.value;
     if (month == 2) { 
-        if (day < 1 || day > 28 || 
-            (leap_year(year) && (day < 1 || day > 29))
-            ) {
+        if (leap_year(year)) {
+            if (day < 1 || day > 29) {
+                valid = false;
+                day_in.parentElement.classList.add("invalid");
+            }
+        } else if (day < 1 || day > 28) {
             valid = false;
             day_in.parentElement.classList.add("invalid");
         }
